@@ -1,3 +1,7 @@
+:root {
+    --progress: 472; /* Default value for stroke-dashoffset (full circle) */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -44,28 +48,37 @@ body {
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
-#number{
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.input-field {
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: none;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#number {
     font-weight: 600;
     color: #555;
 }
 
-circle{
+circle {
     fill: none;
-    stroke:url(#GradientColor);
+    stroke: url(#GradientColor);
     stroke-width: 20px;
-    stroke-dasharray: 472;
+    stroke-dasharray: 472; 
     stroke-dashoffset: 472;
-    animation: anim 2s linear forwards
+    transition: stroke-dashoffset 1s ease-in-out;
 }
 
-svg{
+svg {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-@keyframes anim {
-    100%{
-        stroke-dashoffset: 165;
-    }
 }
